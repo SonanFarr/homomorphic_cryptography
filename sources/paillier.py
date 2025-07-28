@@ -73,7 +73,7 @@ def paillier_decrypt(cipher_text, private_keykey, public_key, nsquare):
     return clear_text
 
 def paillier_test(text_1, text_2, p, q):
-    print("-> Gerando chaves RSA...")
+    print("-> Gerando chaves Paillier...")
     keys = generate_keys(p, q, 8)
     
     public_key = keys["public"]

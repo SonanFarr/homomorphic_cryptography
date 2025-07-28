@@ -109,7 +109,7 @@ def rsa_test(text_1, text_2, p, q):
     print("Texto criptografado 1: {}".format(cipher_1))
     print("Texto criptografado 2: {}".format(cipher_2))
     
-    print("-> Inciando teste da propriedade multiplicariva...")
+    print("-> Inciando teste da propriedade multiplicativa...")
     
     cipher_mult = (cipher_1 * cipher_2) % public_key[0]
     

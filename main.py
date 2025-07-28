@@ -1,5 +1,6 @@
 from sources.rsa import rsa_test
 from sources.paillier import paillier_test
+from sources.ckks import ckks_test
 
 if __name__ == "__main__":
     text_1 = 5
@@ -11,3 +12,5 @@ if __name__ == "__main__":
     rsa_test(text_1, text_2, p, q)
     print("------------------------------------------------------------")
     paillier_test(text_1, text_2, p, q)
+    print("------------------------------------------------------------")
+    ckks_test(text_1, text_2)
