@@ -81,7 +81,7 @@ def generate_keys(p, q, bits=8):
         
 # Main Functions ==================================================================================================================================================>
 
-def rsa_encrypt(clear_text, public_key, p, q):
+def rsa_encrypt(clear_text, public_key):
     n, e = public_key
     cipher_text = pow(clear_text, e, n)
     return cipher_text
@@ -103,8 +103,8 @@ def rsa_test(text_1, text_2, p, q):
     
     print("-> Encriptando mensagens...")
     
-    cipher_1 = rsa_encrypt(text_1, public_key, p, q)
-    cipher_2 = rsa_encrypt(text_2, public_key, p, q)
+    cipher_1 = rsa_encrypt(text_1, public_key)
+    cipher_2 = rsa_encrypt(text_2, public_key)
     
     print("Texto criptografado 1: {}".format(cipher_1))
     print("Texto criptografado 2: {}".format(cipher_2))
