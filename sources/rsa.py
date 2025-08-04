@@ -57,7 +57,7 @@ def inv_mod(a, m):
     
     return x1 % m0
 
-def generate_keys(p, q, bits=8):
+def rsa_generate_keys(p, q, bits=8):
     """ Function used to generate the public and private keys;
 
     Args:

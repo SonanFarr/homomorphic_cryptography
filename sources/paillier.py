@@ -33,7 +33,7 @@ def inv_mod(a, m):
 def L(u, n):
     return (u - 1) // n
 
-def generate_keys(p, q, bits=8):
+def paillier_generate_keys(p, q, bits=8):
     """ Function used to generate the public and private keys;
 
     Args:
