@@ -3,7 +3,7 @@ Repositório criado para implementação do trabalho final da disciplina DCC075 
 
 ## Execução do código: 
 
-No arquivo main.ipyng:
+No arquivo main.ipynb:
 ```
 Execute o módulo de instalação daa bibliotecas
 ```
