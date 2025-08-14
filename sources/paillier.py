@@ -42,13 +42,13 @@ def paillier_generate_keys(p, q, bits=8):
     
     n = p * q
     nsquare = n * n
-    λ = mmc(p - 1, q - 1)
+    lambda_value = mmc(p - 1, q - 1)
     g = n + 1
     
-    x = pow(g, λ, nsquare)
-    μ = inv_mod(L(x, n), n)
+    x = pow(g, lambda_value, nsquare)
+    mi_value = inv_mod(L(x, n), n)
     
-    keys = {'public': (n, g), 'private': (λ, μ), 'nsquare': nsquare}
+    keys = {'public': (n, g), 'private': (lambda_value, mi_value), 'nsquare': nsquare}
     
     return keys
 
@@ -64,17 +64,17 @@ def paillier_encrypt(clear_text, public_key, nsquare):
     return cipher_text
 
 def paillier_decrypt(cipher_text, private_keykey, public_key, nsquare):
-    λ, μ = private_keykey
+    lambda_value, mi_value = private_keykey
     n, g = public_key
-    x = pow(cipher_text, λ, nsquare)
+    x = pow(cipher_text, lambda_value, nsquare)
     l_val = L(x, n)
     
-    clear_text = (l_val * μ) % n
+    clear_text = (l_val * mi_value) % n
     return clear_text
 
 def paillier_test(text_1, text_2, p, q):
     print("-> Gerando chaves Paillier...")
-    keys = generate_keys(p, q, 8)
+    keys = paillier_generate_keys(p, q, 8)
     
     public_key = keys["public"]
     private_key = keys["private"]

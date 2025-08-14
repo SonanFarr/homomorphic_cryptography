@@ -3,43 +3,6 @@ from math import gcd
 
 # Auxiliar Functions ==============================================================================================================================================>
 
-def is_prime(n, k=5):
-    """ Function used to test if a number is prime;
-
-    Args:
-        n (int): Number;
-        k (int): Range;
-    """
-    
-    if n <= 1:
-        return False
-    if n <= 3:
-        return True
-    
-    d = n - 1
-    r = 0
-    
-    while (d % 2 == 0):
-        d //= 2
-        r += 1
-        
-    for _ in range(k):
-        a = random.randrange(2, n - 2)
-        x = pow(a, d, n)
-        
-        if (x == 1) or (x == (n - 1)):
-            continue
-        
-        for _ in range(r - 1):
-            x = pow(x, 2, n)
-            if (x == (n - 1)):
-                break
-        
-        else:
-            return False
-        
-    return True
-
 def inv_mod(a, m):
     """ Funtion used to calculate de inv mod of a number;
 
@@ -93,7 +56,7 @@ def rsa_decrypt(cipher_text, private_key):
 
 def rsa_test(text_1, text_2, p, q):
     print("-> Gerando chaves RSA...")
-    keys = generate_keys(p, q, 8)
+    keys = rsa_generate_keys(p, q, 8)
     
     public_key = keys["public"]
     private_key = keys["private"]
